@@ -1,0 +1,32 @@
+//全局的scss,请将函数和变量写在这里，利用sass-resources-loader插件全局引入，配置详看bulid/utils.js
+$mainColor: #326EF3;
+$borderColor: #eee;
+$deepColor: #333; //深色
+$lightColor:#999999; //浅色
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// @mixin center($left: 50%, $top: 50%) {
+//   position: absolute;
+//   top: $top;
+//   left: $left;
+//   transform: translate3d(-50%, -50%, 0);
+// }
+
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text-truncate($line:1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:$line;
+}
+
+@function px-rem($px) {
+  @return $px / 100px * 1rem;
+}
